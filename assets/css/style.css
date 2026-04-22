@@ -1,280 +1,239 @@
+@charset "UTF-8";
 
 
-body {
-  /* background-color: firebrick; */
- font-size: 3.8vw;
- font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
- /* padding-left: 3%; */
- /* text-indent: 5%; */
- max-width: 97%;
- background-color: black;
- color: white;
- 
-} 
 
-::selection {
-  background: rgba(109, 195, 43, 1);
-  /* background-color: lightgreen; */
-  color: whitesmoke;
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
 
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+@font-face {
+    font-family: 'Your Font Name';
+    src: url('../fonts/yourfontname/yourfontname-roman.woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Your Font Name';
+    src: url('../fonts/yourfontname/yourfontname-italic.woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: block;
+}
+
+
+
+/* VARIABLES */
+
+:root {
+  /* Color values */
+  --color-background: rgba(255,255,255,1);
+  --color-text: rgba(0,0,0,1);
+  --color-text-link: rgba(0,0,255,0.8);
+  --color-text-link-hover: rgba(0,0,255,0.4);
+  /* Font values */
+  --font-text: 'Your Font Name', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 24px;
+  /* Margin values */
+  --margin: 1rem;
+
+
+  /* Examples of possible variables */
+
+  --font-size-heading: calc(var(--font-size) * 2);
+  --font-size-subheading: calc(var(--font-size) * 1.25);
+  --font-size-caption: calc(var(--font-size) * 0.875);
+
+  --margin-xs: calc(var(--margin) * 0.5);
+  --margin-s: calc(var(--margin) * 1);
+  --margin-m: calc(var(--margin) * 2);
+  --margin-l: calc(var(--margin) * 3);
+  --margin-xl: calc(var(--margin) * 5);
 
 }
 
 
-@media (max-width: 860px) {
-  body {
-    font-size: 7.8vw;
-    max-width: 98%;
-    
-  }
 
-  img {
-    padding-top: 1.7% !important;
-    padding-left: .5% !important;
-    padding-bottom: 1% !important;
-    width: 100% !important;
-  }
-
-  .qlink{
-    /* text-decoration: none !important; */
-    text-decoration-thickness: 5px !important;
-    /* color: blue; */
-  }
-
-
-}
-
-
-.link-row {
-  display: flex;
-  justify-content: space-between; /* or use space-around / space-evenly */
-  max-width: 90%;
-  padding: 20px 0;
-}
-
-.link-row a:nth-child(1) { color: #006400; }  /* dark green */
-.link-row a:nth-child(2) { color: #0b5c1f; }
-.link-row a:nth-child(3) { color: #156b36; }
-.link-row a:nth-child(4) { color: #1e6c50; }
-.link-row a:nth-child(5) { color: #25606c; }
-.link-row a:nth-child(6) { color: #1d4f85; }
-.link-row a:nth-child(7) { color: #183f97; }
-.link-row a:nth-child(8) { color: #142fa9; }
-.link-row a:nth-child(9) { color: #101fbb; }
-.link-row a:nth-child(10) { color: #0b0fcf; }  /* dark blue */
+/* GENERAL STYLES */
 
 html {
-  scroll-behavior: smooth; /* enables smooth scrolling */
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
-.back-to-top {
-  color: black;
-  /* text-decoration: none; */
- 
-
+body {
+  position:relative;
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  width:100%;
+  height:auto;
+  overflow-y:auto;
 }
-
-.link-row a {
-  text-decoration: underline;
-  color: black;
-  
-}
-
-.qlink{
-  /* text-decoration: none !important; */
-  text-decoration-thickness: 10px;
-  /* color: blue; */
-}
-
-.link-row a:hover {
-  color: blue;
-}
-
-
-/* margin: 10% 15% 10% 2%; top right bottom left */
-
 
 a {
+  color: var(--color-text-link);
   text-decoration: underline;
-  /* padding-left: 1%; */
-}
-
-
-.mainbox {
-  padding-left: 1.5%;
-  padding-bottom: 2.5%;
-  padding-top: .5%;
-}
-
-img {
-  padding-left: 3%;
-  /* padding-right: 3%; */
-  width: 55%;
-  display: block;
-  padding-top: 0.8%;
-
-}
-
-.hover-darken img {
-  transition: filter 0.5s ease;
-}
-
-.hover-darken img:hover {
-  filter: brightness(150%);
-
-  text-decoration: none;
-  border: none;
 }
 
 a:hover {
-  color: blue;
+  color: var(--color-text-link-hover);
   text-decoration: underline;
-  /* background: rgba(109, 195, 43, 1); */
-  
-
-h{
-    text-decoration: underline;
-   
-    }
 }
 
-h4{
-  color: black;
-  padding-left: 8%; 
-  /* text-indent: 5%; */
-  font-weight: ;
-  text-decoration: underline;
+
+h1{
+  /* h1 style */
+  font-size: clamp(
+    var(--font-size-heading),
+    4vw,
+    calc(var(--font-size-heading) * 1.25)
+  );
+}
+
+h2{
+  /* h2 style */
 }
 
 h3{
-  text-decoration: double;
+  /* h3 style */
 }
 
-h2 {
-  color: blue;
-
+h4, h5, h6{
+  /* h4-h5-h6 style */
 }
 
 p{
-  color: rgb(109, 195, 43);
+  /* paragraph style */
 }
 
-<style>
-
-.do {
-  color: rgb(255, 194, 12); 
+ol, ul{
+  /* ordered list and unordered list styles */
 }
 
-.intro {
-  color: yellow;
+blockquote{
+  /* blockquote element style */
 }
 
-.kz {
-  color: rgb(233, 178, 187); 
-}
-
-.al {
-  color: cadetblue;
-}
-
-.dlee {
-  color: rgb(213, 225, 76); 
+hr{
+  /* horizontal rule style */
 }
 
 
 
+/* PAGE STYLES */
 
-</style>
+/* page structure */
 
-body {
-    margin: 0;
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
 }
 
-    .slideshow {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background-color: black;
-      }
+/* navigation */
+ 
+nav{
+  
+}
 
-      .slideshow img {
-        padding-left: 0%;
-        padding-top: 0%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-         opacity: 0;
-        animation: show 177s steps(1, end) infinite;//
-        background-color: black;
-      } 
-     
-      @keyframes show {
-        0%   { opacity: 1; }
-        20% { opacity: 0; }
-        100% { opacity: 0; }
-      }
-      
-      Delay each image by 3s (3s × 59 = 177s total loop)
-      .slideshow img:nth-child(1)  { animation-delay: 0s; }
-      .slideshow img:nth-child(2)  { animation-delay: 3s; }
-      .slideshow img:nth-child(3)  { animation-delay: 6s; }
-      .slideshow img:nth-child(4)  { animation-delay: 9s; }
-      .slideshow img:nth-child(5)  { animation-delay: 12s; }
-      .slideshow img:nth-child(6)  { animation-delay: 15s; }
-      .slideshow img:nth-child(7)  { animation-delay: 18s; }
-      .slideshow img:nth-child(8)  { animation-delay: 21s; }
-      .slideshow img:nth-child(9)  { animation-delay: 24s; }
-      .slideshow img:nth-child(10) { animation-delay: 27s; }
-      .slideshow img:nth-child(11) { animation-delay: 30s; }
-      .slideshow img:nth-child(12) { animation-delay: 33s; }
-      .slideshow img:nth-child(13) { animation-delay: 36s; }
-      .slideshow img:nth-child(14) { animation-delay: 39s; }
-      .slideshow img:nth-child(15) { animation-delay: 42s; }
-      .slideshow img:nth-child(16) { animation-delay: 45s; }
-      .slideshow img:nth-child(17) { animation-delay: 48s; }
-      .slideshow img:nth-child(18) { animation-delay: 51s; }
-      .slideshow img:nth-child(19) { animation-delay: 54s; }
-      .slideshow img:nth-child(20) { animation-delay: 57s; }
-      .slideshow img:nth-child(21) { animation-delay: 60s; }
-      .slideshow img:nth-child(22) { animation-delay: 63s; }
-      .slideshow img:nth-child(23) { animation-delay: 66s; }
-      .slideshow img:nth-child(24) { animation-delay: 69s; }
-      .slideshow img:nth-child(25) { animation-delay: 72s; }
-      .slideshow img:nth-child(26) { animation-delay: 75s; }
-      .slideshow img:nth-child(27) { animation-delay: 78s; }
-      .slideshow img:nth-child(28) { animation-delay: 81s; }
-      .slideshow img:nth-child(29) { animation-delay: 84s; }
-      .slideshow img:nth-child(30) { animation-delay: 87s; }
-      .slideshow img:nth-child(31) { animation-delay: 90s; }
-      .slideshow img:nth-child(32) { animation-delay: 93s; }
-      .slideshow img:nth-child(33) { animation-delay: 96s; }
-      .slideshow img:nth-child(34) { animation-delay: 99s; }
-      .slideshow img:nth-child(35) { animation-delay: 102s; }
-      .slideshow img:nth-child(36) { animation-delay: 105s; }
-      .slideshow img:nth-child(37) { animation-delay: 108s; }
-      .slideshow img:nth-child(38) { animation-delay: 111s; }
-      .slideshow img:nth-child(39) { animation-delay: 114s; }
-      .slideshow img:nth-child(40) { animation-delay: 117s; }
-      .slideshow img:nth-child(41) { animation-delay: 120s; }
-      .slideshow img:nth-child(42) { animation-delay: 123s; }
-      .slideshow img:nth-child(43) { animation-delay: 126s; }
-      .slideshow img:nth-child(44) { animation-delay: 129s; }
-      .slideshow img:nth-child(45) { animation-delay: 132s; }
-      .slideshow img:nth-child(46) { animation-delay: 135s; }
-      .slideshow img:nth-child(47) { animation-delay: 138s; }
-      .slideshow img:nth-child(48) { animation-delay: 141s; }
-      .slideshow img:nth-child(49) { animation-delay: 144s; }
-      .slideshow img:nth-child(50) { animation-delay: 147s; }
-      .slideshow img:nth-child(51) { animation-delay: 150s; }
-      .slideshow img:nth-child(52) { animation-delay: 153s; }
-      .slideshow img:nth-child(53) { animation-delay: 156s; }
-      .slideshow img:nth-child(54) { animation-delay: 159s; }
-      .slideshow img:nth-child(55) { animation-delay: 162s; }
-      .slideshow img:nth-child(56) { animation-delay: 165s; }
-      .slideshow img:nth-child(57) { animation-delay: 168s; }
-      .slideshow img:nth-child(58) { animation-delay: 171s; }
-      .slideshow img:nth-child(59) { animation-delay: 174s; }
-    
+/* content */
+
+main{
+ 
+}
+
+summary{
+  
+}
+
+
+
+
+
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+
+
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* responsive typeface for various breaking points, sets the default 'rem' value */
+@media (max-width: 299px) { :root{--font-size: 18px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 19px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 340px) and (max-width: 440px) { :root{--font-size: 20px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 19px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 780px) and (max-width: 992px) { :root{--font-size: 20px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 993px) and (max-width: 1200px) { :root{--font-size: 21px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 1201px) and (max-width: 1320px) { :root{--font-size: 22px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 1321px) { :root{--font-size: 24px;} html, body {font: var(--font-size) var(--font-text); } }
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+@media (max-width: 779px) {
+
+  /* your 'mobile' overriding css properties here */
+
+
+
+  /* utility classes, mobile */
+
+  .desktop-only{
+    display:none;
+  }
+
+  .mobile-only{
+    display:block;
+  }
+
+}
+
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+   /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+
+}
+
+
