@@ -18,7 +18,7 @@
   --purple: #ff00d9;
   --white:  #ffffff;
   --bg:     #0e0e0e;
-  --font:   helvetica bold, helvetica, arial, sans-serif;
+  --font:   "Helvetica", "Arial", sans-serif;
   --size:   38px;
 }
 
@@ -38,6 +38,7 @@ html {
   background: var(--bg);
   color: var(--green);
   letter-spacing: 0.8px;
+  overscroll-behavior: none;
 }
 
 body {
