@@ -363,8 +363,8 @@ footer p {
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 
 @media (max-width: 780px) {
-  :root { --size: 22px; }
-  .page-wrapper { padding: 2rem 1.2rem 4rem; }
+  :root { --size: 14px; }
+  .page-wrapper { padding: 2rem 1rem 2rem; }
 
   /* Stack to single column on mobile */
   .section {
