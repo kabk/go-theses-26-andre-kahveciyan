@@ -119,6 +119,7 @@ h1 {
   text-transform: uppercase;
   line-height: 1.2;
   margin-bottom: 0.5rem;
+  color: #FFE000;
 }
 
 .byline {
@@ -127,14 +128,30 @@ h1 {
   color: var(--white);
   opacity: 0.5;
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-family: var(--font);
+  font-size: var(--size);
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  text-decoration: underline;
+  color: #FFE000;
 }
 
 
 /* ── NAVIGATION ──────────────────────────────────────────── */
 
 nav {
-  padding: 0.3rem 0;
+  text-align: center;
+  padding: 0rem 1;
   margin-bottom: 0;
+  margin-top: 5;
+  
 }
 
 nav ul {
@@ -142,7 +159,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   gap: 0;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 }
 
 nav ul li a {
@@ -152,6 +169,7 @@ nav ul li a {
   text-decoration: underline;
   text-transform: uppercase;
   opacity: 0.5;
+  
 }
 
 nav ul li a:hover {
@@ -202,8 +220,20 @@ h2 {
   position: sticky;
   top: 1rem;
   text-decoration: underline;
+  color: #FFE000;
 }
 
+h5 {
+  font-family: var(--font);
+  font-size: var(--size);
+  color: var(--white);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  top: 1rem;
+  text-decoration: underline;
+  color: #ffffff;
+}
 
 /* ── BODY TEXT ───────────────────────────────────────────── */
 
