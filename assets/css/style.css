@@ -250,7 +250,7 @@ p {
   color: var(--green);
   line-height: 1.4;
   margin-bottom: 1rem;
-  font-weight: normal;
+  
   text-indent: 2em;
 }
 
