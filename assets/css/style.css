@@ -18,7 +18,7 @@
   --purple: #ff00d9;
   --white:  #ffffff;
   --bg:     #0e0e0e;
-  --font:   helvetica bold;
+  --font:   helvetica bold, helvetica, arial, sans-serif;
   --size:   38px;
 }
 
@@ -34,6 +34,7 @@
 html {
   font-family: var(--font);
   font-size: var(--size);
+  font-weight: 900;
   background: var(--bg);
   color: var(--green);
   letter-spacing: 0.8px;
