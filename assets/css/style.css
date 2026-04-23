@@ -362,8 +362,8 @@ footer p {
 /* en zo */
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 
-@media (max-width: 1080x) {
-  :root { --size: 14px; }
+@media (max-width: 1044px) {
+  :root { --size: 12px; }
   .page-wrapper { padding: 2rem 1rem 2rem; }
 
   /* Stack to single column on mobile */
