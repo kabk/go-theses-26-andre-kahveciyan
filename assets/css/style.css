@@ -12,14 +12,14 @@
 
 :root {
   --yellow: #FFE000;
-  --green:  #7CFC00;
-  --red:    #FF2400;
-  --blue:   #00BFFF;
-  --purple: #CC00FF;
+  --green:  #39a800;
+  --red:    #ff2200;
+  --blue:   #0026ff;
+  --purple: #ff00d9;
   --white:  #ffffff;
-  --bg:     #000000;
+  --bg:     #0e0e0e;
   --font:   Impact, 'Arial Narrow', Arial, sans-serif;
-  --size:   32px;
+  --size:   36px;
 }
 
 
@@ -85,16 +85,16 @@ body.essay {
 }
 
 .page-wrapper {
-  max-width: 1100px;
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 4rem 4rem 6rem;
+  padding: 2rem 4rem 3rem;
 }
 
 
 /* ── HEADER ──────────────────────────────────────────────── */
 
 header {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 a.back {
@@ -115,7 +115,7 @@ a.back:hover {
 h1 {
   font-family: var(--font);
   font-size: var(--size);
-  color: var(--red);
+  color: var(--white);
   text-transform: uppercase;
   line-height: 1.2;
   margin-bottom: 0.3rem;
@@ -133,23 +133,23 @@ h1 {
 /* ── NAVIGATION ──────────────────────────────────────────── */
 
 nav {
-  border-top: 1px solid rgba(255,255,255,0.15);
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  padding: 0.8rem 0;
+  padding: 0.3rem 0;
+  margin-bottom: 0;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 1.2rem;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
 }
 
 nav ul li a {
   font-family: var(--font);
   font-size: var(--size);
   color: var(--white);
-  text-decoration: none;
+  text-decoration: underline;
   text-transform: uppercase;
   opacity: 0.4;
 }
@@ -160,16 +160,48 @@ nav ul li a:hover {
 }
 
 
+/* ── TWO-COLUMN SECTION LAYOUT ───────────────────────────── */
+/* Each section is a grid: title left, content right         */
+
+.section {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0 2rem;
+  margin-top: 0.5rem;
+  border-top: none;
+  padding-top: 0.5rem;
+}
+
+.section-title {
+  grid-column: 1;
+}
+
+.section-content {
+  grid-column: 2;
+}
+
+/* Abstract spans full width */
+.section.full-width {
+  grid-template-columns: 1fr;
+}
+
+.section.full-width .section-title,
+.section.full-width .section-content {
+  grid-column: 1;
+}
+
+
 /* ── SECTION TITLES ──────────────────────────────────────── */
 
 h2 {
   font-family: var(--font);
   font-size: var(--size);
-  color: var(--yellow);
+  color: var(--white);
   text-transform: uppercase;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
   line-height: 1.2;
+  position: sticky;
+  top: 2rem;
+  text-decoration: underline;
 }
 
 
@@ -179,12 +211,11 @@ p {
   font-family: var(--font);
   font-size: var(--size);
   color: var(--green);
-  line-height: 1.65;
+  line-height: 1.4;
   margin-bottom: 1rem;
   font-weight: normal;
   text-indent: 2em;
 }
-
 
 .abstract p,
 .references p,
@@ -195,8 +226,9 @@ footer p,
 }
 
 em, i {
-  color: var(--blue);
-  font-style: italic;
+  color: var(--red);
+  font-style: normal;
+  text-decoration: underline
 }
 
 
@@ -215,14 +247,16 @@ a:hover {
 /* ── ABSTRACT ────────────────────────────────────────────── */
 
 .abstract {
-  border-left: 2px solid var(--yellow);
-  padding-left: 1.2rem;
-  margin-bottom: 2rem;
+  background: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  align-content: center;
 }
 
 .abstract p {
-  color: var(--white);
-  opacity: 0.75;
+  color: #000000;
+  opacity: 1;
+  text-indent: 0;
 }
 
 
@@ -263,8 +297,8 @@ figcaption {
 /* ── STATEMENT ───────────────────────────────────────────── */
 
 .statement {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin-top: 3rem;
+  /* border-top: 1px solid rgba(255,255,255,0.1); */
+  margin-top: 2rem;
   padding-top: 2rem;
 }
 
@@ -279,7 +313,7 @@ figcaption {
 footer {
   margin-top: 4rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  /* border-top: 1px solid rgba(255,255,255,0.08); */
 }
 
 footer p {
@@ -291,7 +325,22 @@ footer p {
 
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
   :root { --size: 22px; }
   .page-wrapper { padding: 2rem 1.2rem 4rem; }
+
+  /* Stack to single column on mobile */
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title,
+  .section-content {
+    grid-column: 1;
+  }
+
+  h2 {
+    position: static;
+    margin-bottom: 1rem;
+  }
 }
