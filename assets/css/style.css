@@ -87,7 +87,7 @@ body.essay {
 .page-wrapper {
   max-width: 1250px;
   margin: 0 auto;
-  padding: 2rem 4rem 3rem;
+  padding: 2rem 3rem 3rem;
 }
 
 
@@ -118,7 +118,7 @@ h1 {
   color: var(--white);
   text-transform: uppercase;
   line-height: 1.2;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .byline {
@@ -151,7 +151,7 @@ nav ul li a {
   color: var(--white);
   text-decoration: underline;
   text-transform: uppercase;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 nav ul li a:hover {
@@ -168,7 +168,7 @@ nav ul li a:hover {
   grid-template-columns: 180px 1fr;
   gap: 0 2rem;
   margin-top: 0.5rem;
-  border-top: none;
+  border-top: 0;
   padding-top: 0.5rem;
 }
 
@@ -200,7 +200,7 @@ h2 {
   text-transform: uppercase;
   line-height: 1.2;
   position: sticky;
-  top: 2rem;
+  top: 1rem;
   text-decoration: underline;
 }
 
@@ -306,7 +306,7 @@ figcaption {
 
 .statement p {
   color: var(--white);
-  opacity: 0.35;
+  opacity: 0.2;
 }
 
 
