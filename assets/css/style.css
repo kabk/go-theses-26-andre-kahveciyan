@@ -362,7 +362,7 @@ footer p {
 /* en zo */
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 
-@media (max-width: 780px) {
+@media (max-width: 1080x) {
   :root { --size: 14px; }
   .page-wrapper { padding: 2rem 1rem 2rem; }
 
