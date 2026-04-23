@@ -362,14 +362,26 @@ footer p {
 /* en zo */
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 
-@media (max-width: 1044px) {
-  :root { --size: 12px; }
-  .page-wrapper { padding: 2rem 1rem 2rem; }
+@media (max-width: 744px) {
+  :root { --size: 15px; }
+  .page-wrapper { padding: 0; }
 
   /* Stack to single column on mobile */
-  .section {
+  /* .section {
     grid-template-columns: 1fr;
-  }
+  } */
+
+  .section-content {
+  grid-column: 1;
+}
+
+
+
+.section-content {
+  grid-column: 1;
+}
+
+
 
   .section-title,
   .section-content {
@@ -382,7 +394,7 @@ footer p {
   }
 
   figure img {
-  width: 100%;
+  width: 100vw;
   height: auto;
   /* display: block; */
 }
