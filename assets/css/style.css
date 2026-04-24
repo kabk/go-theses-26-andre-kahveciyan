@@ -18,7 +18,7 @@
   --purple: #ff00d9;
   --white:  #ffffff;
   --bg:     #0e0e0e;
-  --font:   "Helvetica BOLD", "Arial", sans-serif;
+  --font:   "Helvetica", "Arial", sans-serif;
   --size:   38px;
 }
 
@@ -380,6 +380,13 @@ footer p {
 
 
 @media (max-width: 744px) {
+
+  figure {
+  
+  padding: 15px;
+  
+}
+
 
   :root { --size: 20px; }
   
