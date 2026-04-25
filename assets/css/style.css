@@ -19,6 +19,7 @@
   --white:  #ffffff;
   --bg:     #0e0e0e;
   --font:   "Helvetica", "Arial", sans-serif;
+  /* --font: "times"; */
   --size:   38px;
 }
 
@@ -301,7 +302,8 @@ a:hover {
 .abstract p {
   color: #000000;
   opacity: 1;
-  text-indent: 0;
+  /* text-indent: 0; */
+  text-indent: 2em;
 }
 
 
@@ -441,6 +443,7 @@ h3 {
   background: #ffffff;
   margin-bottom: 0rem;
   align-content: center;
+  
 }
 
 nav ul li a {
